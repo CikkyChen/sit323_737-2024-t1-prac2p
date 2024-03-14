@@ -10,6 +10,12 @@ app.get("/addTwoNumber", (req,res)=>{
     const n2 = parseInt(req.query.n2);
     const result = addTwoNumber(n1,n2);
     res.json({statuscocde:200, data: result});
+});
+
+app.get("/", (req,res) => {
+    const n1 = "<html><body><H1>HELLO THERE </H1></body></html>";
+    res.set('Content-Type', 'text/html');
+    res.send(Buffer.from(n1));
 })
 
 console.log (addTwoNumber(19,22));
